@@ -81,6 +81,28 @@
             margin-top:40px;
             color:#ccc;
         }
+
+        /* Emergency SOS Button */
+.emergency-btn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #dc2626;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.4);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.emergency-btn:hover{
+    background: #b91c1c;
+    transform: scale(1.08);
+}
     </style>
 </head>
 
@@ -89,6 +111,10 @@
 <header>
     <h1>Anti-Kuddus Protocol</h1>
     <p>Student Dashboard</p>
+
+    <button class="emergency-btn" onclick="location.href='sos.html'">
+            SOS Alert
+        </button>
 </header>
 
 <div class="container">
@@ -118,10 +144,6 @@
 
         <button onclick="location.href='summary.html'">
             AI Summary
-        </button>
-
-        <button onclick="location.href='sos.html'">
-            SOS Alert
         </button>
 
         <button onclick="location.href='factchecker.html'">
