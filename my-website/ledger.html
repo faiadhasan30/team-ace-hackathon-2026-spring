@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiffin Ledger</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+    margin:0;
+}
+
+.container{
+    width:450px;
+    margin:50px auto;
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:10px;
+}
+
+h2{
+    text-align:center;
+    color:#2563eb;
+}
+
+select,input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+}
+
+table,th,td{
+    border:1px solid #ccc;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Tiffin & Bribe Ledger</h2>
+
+<select id="type">
+<option>Bribe</option>
+<option>Tiffin Theft</option>
+</select>
+
+<input type="number" id="amount" placeholder="Amount">
+
+<button onclick="addRecord()">Add Record</button>
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Amount</th>
+</tr>
+
+<tbody id="ledgerTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+function addRecord(){
+
+let type=document.getElementById("type").value;
+
+let amount=document.getElementById("amount").value;
+
+if(amount==""){
+alert("Enter Amount");
+return;
+}
+
+document.getElementById("ledgerTable").innerHTML+=`
+<tr>
+<td>${type}</td>
+<td>${amount}</td>
+</tr>
+`;
+
+document.getElementById("amount").value="";
+
+}
+
+</script>
+
+</body>
+</html>

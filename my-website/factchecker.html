@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuddus Fact Checker</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+    margin:0;
+}
+.container{
+    width:450px;
+    margin:60px auto;
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+}
+h2{
+    color:#2563eb;
+}
+input{
+    width:100%;
+    padding:10px;
+    margin:15px 0;
+}
+button{
+    width:100%;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#1d4ed8;
+}
+#result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Kuddus Fact Checker</h2>
+
+<input type="text" id="claim" placeholder="Enter Kuddus's Claim">
+
+<button onclick="checkFact()">Check</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function checkFact(){
+
+let claim=document.getElementById("claim").value.toLowerCase();
+
+if(claim.includes("homework")){
+document.getElementById("result").innerHTML=
+"❌ FALSE <br>All students must complete homework.";
+}
+else if(claim.includes("captain")){
+document.getElementById("result").innerHTML=
+"✅ TRUE <br>Class Captain can organize the class with teacher approval.";
+}
+else{
+document.getElementById("result").innerHTML=
+"⚠ Rule not found in database.";
+}
+
+}
+
+</script>
+
+</body>
+</html>
